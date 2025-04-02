@@ -1,7 +1,7 @@
 ORG 100h
                
-mov AX, 1000h;
-mov DS, AX;
+mov AX, 1000h       ;
+mov DS, AX          ;
 mov SI, 10          ; 
 mov AX, 0           ; 
 
@@ -13,13 +13,13 @@ fibo:
     mov BL, [0200h] ; 
     mov BH, [0250h] ;
     
-    sub SI, 1;
-    cmp SI, 0;
-    je end;
+    sub SI, 1       ;
+    cmp SI, 0       ;
+    je end          ;
     
     cmp [0300h], 0  ; 
     je addfirst     ; 
-    ja addlast      ;
+    ja addsecond    ;
 
     add [0250h], BL ; 
 
@@ -33,14 +33,14 @@ fibo:
 addfirst:
     add [0200h], BH ; 
     
-   cmp [0300h], 1  ; 
+   cmp [0300h], 1   ; 
     jb setone       ; 
     je setzero      ;
              
-addlast:
+addsecond:
     add [0250h], BL ; 
     
-   cmp [0300h], 1  ; 
+   cmp [0300h], 1   ; 
     jb setone       ; 
     je setzero      ;
 
